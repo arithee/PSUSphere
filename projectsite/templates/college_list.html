@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">List of OrgMembers</div>
+                        <div class="card-title">List of Colleges</div>
                         <div class="card-category">Page Subtitle</div>
                     </div>
                     <br />
@@ -25,7 +25,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="pull-right">
-                                    <a href="{% url 'orgmember-add' %}" class="btn btn-success btn-rounded"> Add OrgMember</a>
+                                    <a href="{% url 'colleges-add' %}" class="btn btn-success btn-rounded"> Add College</a>
                                 </div>
                             </div>
                         </div>
@@ -33,21 +33,17 @@
                         <table class="table table-striped mt-3">
                             <thead>
                                 <tr>
-                                    <th scope="col">Student</th>
-                                    <th scope="col">Organization</th>
-                                    <th scope="col">Date Joined</th>
+                                    <th scope="col">College Name</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for object in object_list %}
                                     <tr>
-                                        <td>{{ object.student }}</td>
-                                        <td>{{ object.organization }}</td>
-                                        <td>{{ object.date_joined }}</td>
+                                        <td>{{ object.college_name }}</td>
                                         <td>
-                                            <a href="orgmember_list/{{ object.id }}">Edit</a>
-                                            <a href="orgmember_list/{{ object.id }}/delete" class="text-danger">Delete</a>
+                                            <a href="colleges_list/{{ object.id }}">Edit</a>
+                                            <a href="colleges_list/{{ object.id }}/delete" class="text-danger">Delete</a>
                                         </td>
                                     </tr>
                                 {% endfor %}
