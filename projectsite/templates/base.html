@@ -121,7 +121,12 @@
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+									<a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+										<i class="fa fa-power-off"></i> Logout
+									</a>
+									<form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+										{% csrf_token %}
+									</form>
 								</ul>
 								<!-- /.dropdown-user -->
 							</li>
@@ -168,7 +173,7 @@
 					</div>
 					<ul class="nav">
 						<li class="nav-item">
-							<a href="index.html">
+							<a href="{% url 'home' %}">
 								<i class="la la-dashboard"></i>
 								<p>Dashboard</p>
 							</a>
